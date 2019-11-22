@@ -15,14 +15,17 @@ const V = {
             </div>
         </li>
     </ul>`).appendTo(container)
+    },
+    render(container) {
+        V.el(container)
+        siteList($('.siteList').find('.lastLi'))
     }
 }
 const C = {
     init(container) {
-        V.el(container)
+        V.render(container)
         C.bindEvent()
         C.bindEventHub()
-        siteList($('.siteList').find('.lastLi'))
     },
     bindEvent() {
         $('.addButton').on('click', () => {

@@ -7,11 +7,14 @@ const V = {
         <button type='submit'>搜索</button>
     </form>`).appendTo(container)
 
+    },
+    render(container) {
+        V.el(container)
     }
 }
 const C = {
     init(container) {
-        V.el(container)
+        V.render(container)
         C.bindEvent()
     },
     bindEvent() {

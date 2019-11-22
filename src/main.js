@@ -11,14 +11,17 @@ const V = {
     },
     main() {
         $(`    <main class=" globalMain"></main>`).appendTo($('#root'))
-    }
-}
-const C = {
-    init() {
+    },
+    render() {
         V.header()
         V.main()
         globalHeader($('.globalHeader'))
         globalMain($('.globalMain'))
+    }
+}
+const C = {
+    init() {
+        V.render()
         C.bindEvent()
     },
     bindEvent() {

@@ -10948,11 +10948,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var V = {
   el: function el(container) {
     (0, _jquery.default)(" <form class=\"search\" method=\"GET\" action=\"https://www.baidu.com/s\" target=\"_blank\">\n        <input name='wd' type=\"text\" id=\"searchInput\" value=\"\u4F7F\u7528\u767E\u5EA6\u641C\u7D22\" style=\"color:grey\">\n        <button type='submit'>\u641C\u7D22</button>\n    </form>").appendTo(container);
+  },
+  render: function render(container) {
+    V.el(container);
   }
 };
 var C = {
   init: function init(container) {
-    V.el(container);
+    V.render(container);
     C.bindEvent();
   },
   bindEvent: function bindEvent() {
@@ -11044,14 +11047,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var V = {
   el: function el(container) {
     (0, _jquery.default)("\n     <ul class=\"siteList\">\n        <li class=\"addButton lastLi\">\n            <div class=\"icon-wrapper\">\n                <svg class=\"icon\">\n                    <use xlink:href=\"#icon-add\"></use>\n                </svg>\n                <div class=\"text\"> \u65B0\u589E\u7F51\u7AD9</div>\n            </div>\n        </li>\n    </ul>").appendTo(container);
+  },
+  render: function render(container) {
+    V.el(container);
+    (0, _siteList.default)((0, _jquery.default)('.siteList').find('.lastLi'));
   }
 };
 var C = {
   init: function init(container) {
-    V.el(container);
+    V.render(container);
     C.bindEvent();
     C.bindEventHub();
-    (0, _siteList.default)((0, _jquery.default)('.siteList').find('.lastLi'));
   },
   bindEvent: function bindEvent() {
     (0, _jquery.default)('.addButton').on('click', function () {
@@ -11126,14 +11132,17 @@ var V = {
   },
   main: function main() {
     (0, _jquery.default)("    <main class=\" globalMain\"></main>").appendTo((0, _jquery.default)('#root'));
-  }
-};
-var C = {
-  init: function init() {
+  },
+  render: function render() {
     V.header();
     V.main();
     (0, _globalHeader.default)((0, _jquery.default)('.globalHeader'));
     (0, _globalMain.default)((0, _jquery.default)('.globalMain'));
+  }
+};
+var C = {
+  init: function init() {
+    V.render();
     C.bindEvent();
   },
   bindEvent: function bindEvent() {
@@ -11150,4 +11159,4 @@ var C = {
 };
 C.init();
 },{"jquery":"juYr","./reset.css":"AQoi","./style.css":"AQoi","./globalHeader.js":"rhff","./globalMain.js":"Cpcw","./eventHub.js":"G8EW"}]},{},["epB2"], null)
-//# sourceMappingURL=main.c76b2f90.js.map
+//# sourceMappingURL=main.1a1f6ab6.js.map
